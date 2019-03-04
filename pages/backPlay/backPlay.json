@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "精灵直播",
+  "usingComponents": {
+    "component-abstract": "/pages/components/abstract/abstract",
+    "component-back-play": "/pages/components/back_play/back_play",
+    "component-trailer": "/pages/components/trailer/trailer"
+  }
+}

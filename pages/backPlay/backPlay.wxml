@@ -1,0 +1,62 @@
+<view class="section tc">
+  <video id="myVideo" src="{{videoSrc}}"
+    contr ols object-fit="cover"></video>
+  <view class='tabs'>
+    <view bindtap='tabSwitch' data-index="{{index}}" class='item {{index == detilBox? "active":""}}' wx:for="{{liveTabList}}" wx:key="{{index}}">{{item.val}}
+      <view wx:if="{{index == detilBox}}" class='b_line'></view>
+    </view>
+  </view>
+ 
+
+  <!-- 简介开始 -->
+  <view class='jj_item_box' catchtouchstart="touchStart" catchtouchend="touchEnd" wx:if="{{detilBox == 0}}">
+    <component-abstract itemObj="{{abstractData}}"></component-abstract>
+  </view>
+  <!-- 简介结束 -->
+  <!-- 回放开始 -->
+  <view class='hf_item_box' bindtouchstart="touchStart" bindtouchend="touchEnd" wx:elif="{{detilBox == 1}}">
+   <image src='../../images/no.png' class='noimg' wx:if="{{itemwhole}}"></image>
+        <!-- <component-back-play backPlayObj="{{backPlayData}}"></component-back-play> -->
+    <view class='back_box' catchtap='playBackItem' wx:for="{{backPlayData}}" wx:key="{{index}}" data-bean="{{item}}">
+      <view class='l_bcak'>
+        <image class='t_img' src='{{item.live_pic}}'></image>
+        <text class='t_time'>{{item.an_name}}</text>
+      </view>
+      <view class='r_bcak'>
+        <text class='b_title'>{{item.live_name}}</text>
+        <text class='b_info'>主播：{{item.an_name}}  {{item.live_time}}</text>
+      </view>
+    </view>
+    <view class='see_more' wx:if="{{showView}}">
+      <image class='down_arrow' src='../../images/down_arrow.png'></image>
+      <text class="more_text" bindtap='viewmore'>查看更多</text>
+    </view>
+  </view>
+  <!-- 回放结束 -->
+  <!-- 预告开始 -->
+  <view class='yg_item_box' bindtouchstart="touchStart" bindtouchend="touchEnd" wx:elif="{{detilBox == 2}}">
+    <!-- <component-trailer trailers="{{trailers}}"></component-trailer> -->
+     <image src='../../images/no.png' class='noimg' wx:if="{{nothole}}"></image>
+      <view class='yg_item' wx:for="{{trailers}}" wx:key="{{index}}">
+      <text class='yg_title'>{{item.live_name}}</text>
+      <image class='yg_img' src='{{item.live_pic}}'></image>
+      <view class='yg_info'>
+        <text class='yg_the_host'>主播：{{item.an_name}}</text>
+        <text class='yg_time'>直播时间  {{item.live_time}}</text>
+      </view>
+    </view>
+    <view class='see_more' wx:if="{{notshow}}">
+      <image class='down_arrow' src='../../images/down_arrow.png'></image>
+      <text class="more_text" bindtap='showmore'>查看更多</text>
+    </view>
+  </view>
+  <!-- 预告结束 -->
+  <!-- 下载开始 -->
+  <view class='xz_item_box' catchtouchstart="touchStart" catchtouchend="touchEnd" wx:else>
+    <!-- <web-view src="https://www.mycarter.cn/test">
+      
+    </web-view> -->
+
+  </view>
+  <!-- 下载结束 -->
+</view>

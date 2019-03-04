@@ -1,0 +1,75 @@
+.live_person_info .j_content {
+  width: 714rpx;
+  padding-bottom: 16rpx;
+  border: 1px solid #d5d7e6;
+  margin: 16rpx auto 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.live_person_info .j_content .l_box {
+  width: 20%;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.j_content .l_box .avatar {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.j_content .l_box .nick {
+  font-size: 24rpx;
+  color: #4a55df;
+}
+
+.live_person_info .j_content .r_box {
+  width: 80%;
+  font-size: 30rpx;
+  text-align: left;
+}
+
+.j_content .r_box .j_title {
+  font-size: 32rpx;
+  margin: 35rpx 0 0 0;
+}
+
+.j_content .r_box .j_time {
+  font-size: 22rpx;
+  color: #b8b8b8;
+  margin-right: 60rpx;
+}
+
+.j_content .r_box .j_heat {
+  font-size: 22rpx;
+  color: #ffa590;
+}
+
+.detail_box .d_title {
+  display: inline-block;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+  color: #333;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.detail_box .d_info {
+  display: inline-block;
+  margin: 0 20rpx;
+  color: #3f3f3f;
+  font-size: 28rpx;
+}
+
+.detail_box .down_box {
+  text-align: center;
+}
+
+.down_box .down_erm {
+  width: 160rpx;
+  height: 160rpx;
+}

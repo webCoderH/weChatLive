@@ -1,0 +1,155 @@
+video {
+  width: 100%;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #595fd5;
+}
+
+.tabs .item {
+  position: relative;
+  width: 25%;
+  text-align: center;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.tabs .b_line {
+  position: absolute;
+  bottom: -3rpx;
+  left: 53rpx;
+  width: 80rpx;
+  height: 6rpx;
+  background: #4257e5;
+  border-radius: 80px;
+}
+
+.tabs .active {
+  font-size: 36rpx;
+  color: #3d50da;
+}
+
+.live_person_info .j_content {
+  width: 714rpx;
+  /* height: 167rpx; */
+  padding-bottom: 16rpx;
+  border: 1px solid #d5d7e6;
+  margin: 16rpx auto 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.live_person_info .j_content .l_box {
+  /* display: flex;
+  align-items: center; *//* display: inline-block; */
+  width: 20%;
+  /* height: 100%; */
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.back_box {
+  display: flex;
+  justify-content: center;
+  margin: 25rpx 20rpx;
+}
+
+.l_bcak {
+  position: relative;
+  width: 230rpx;
+  font-size: 0;
+}
+
+.l_bcak .t_img {
+  width: 230rpx;
+  height: 130rpx;
+}
+
+.l_bcak .t_time {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.r_bcak {
+  display: inline-block;
+  font-size: 0;
+}
+
+.r_bcak .b_title {
+  display: inline-block;
+  width: 100%;
+  font-size: 28rpx;
+  color: #3f3f3f;
+  margin: 25rpx 0 10rpx 20rpx;
+}
+
+.r_bcak .b_info {
+  font-size: 22rpx;
+  color: #b3b3b3;
+  margin-left: 20rpx;
+}
+
+.see_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx 0 100rpx;
+}
+
+.see_more .down_arrow {
+  width: 40rpx;
+  height: 32rpx;
+}
+
+.see_more .more_text {
+  font-size: 30rpx;
+  color: #bfbfbf;
+}
+.yg_item {
+  position: relative;
+  width: 100%;
+}
+
+.yg_title {
+  display: inline-block;
+  font-size: 32rpx;
+  color: #3f3f3f;
+  font-weight: bold;
+  margin: 47rpx 0 15rpx 10rpx;
+}
+
+.yg_img {
+  width: 100%;
+  height: 423rpx;
+}
+
+.yg_info {
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  color: #fff;
+   font-size: 27rpx;
+}
+
+.yg_info .yg_the_host {
+  display: inline-block;
+  margin-right: 60rpx;
+ 
+}
+.noimg{
+  width: 100%;
+  position: relative;
+  top: 0;left: 0;
+}
+
+
+
+
+

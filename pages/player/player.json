@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "精灵直播",
+  "usingComponents": {
+    "component-abstract": "/pages/components/abstract/abstract"
+  }
+} 

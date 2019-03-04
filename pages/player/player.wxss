@@ -1,0 +1,506 @@
+.page-body-button {
+  margin-bottom: 30rpx;
+}
+
+/* video_play_box {
+  width: 100%;
+  height: 225rpx;
+} */
+
+.live_bg_box {
+  width: 100%;
+  height: 100%;
+}
+.live_bg_box .status_text{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom:10rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+.live_player {
+  width: 100%;
+}
+
+.live_bg {
+  width: 100%;
+  height: 100%;
+}
+
+.now_live_box {
+  width: 150rpx;
+  height: 41rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+}
+
+.now_live {
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  width: 100%;
+}
+
+.btn1 {
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+  background: #fff;
+}
+
+.btn2 {
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+  background: #fff;
+}
+
+.flv_cover_outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.loading_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_box .loading_icon {
+  z-index: 10;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.video_play_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video_play_box .notWif {
+  position: absolute;
+}
+
+.video_play_box .video_play_icon {
+  z-index: 10;
+}
+
+.video_play_icon {
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 10;
+  position: absolute;
+}
+
+.notWifi_play_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notWifi_play_box .go_play {
+  width: 200rpx;
+  height: 80rpx;
+  background-color: #7180e0;
+  line-height: 80rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.fullscreen_wraper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  background: rgba(70, 67, 67, 0.5);
+  z-index: 10;
+}
+
+.fullscreen_wraper_t {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80rpx;
+  background: rgba(70, 67, 67, 0.5);
+  z-index: 10;
+}
+
+.fullscreen_wraper .icon_box, .fullscreen_wraper_t .icon_box {
+  width: 150rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen_wraper .icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.fullscreen_wraper .icon_box1 {
+  width: 150rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.fullscreen_wraper_t .icon1, .fullscreen_wraper .icon1 {
+  /* position: absolute;
+  top: 15rpx;
+  left: 40rpx; */
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #595fd5;
+}
+
+.tabs .item {
+  position: relative;
+  width: 20%;
+  text-align: center;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.tabs .b_line {
+  position: absolute;
+  bottom: -3rpx;
+  left: 36rpx;
+  width: 80rpx;
+  height: 6rpx;
+  background: #4257e5;
+  border-radius: 80px;
+}
+
+.tabs .active {
+  font-size: 36rpx;
+  color: #3d50da;
+}
+
+.tips {
+  height: 80rpx;
+}
+
+.tips .tips_text {
+  font-size: 26rpx;
+  margin: 15rpx 15rpx;
+  color: #7180e0;
+}
+
+.scroll-view_H {
+  width: 100%;
+  /* height: 450rpx; */
+  overflow-y: auto;
+  position: absolute;
+  top: 625rpx;
+  bottom: 123rpx;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.scroll-view_H .item_box {
+  margin: 0 15rpx 10rpx 15rpx;
+  display: table;
+}
+
+.scroll-view_H .in_box {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  width: 100%;
+  word-break: break-all;
+}
+
+.scroll-view_H .avatar {
+  width: 73rpx;
+  height: 73rpx;
+  border-radius: 73rpx;
+  margin-right: 10rpx;
+}
+
+.scroll-view_H .nick {
+  font-size: 26rpx;
+  color: #adadad;
+}
+
+.scroll-view_H .text {
+  font-size: 26rpx;
+  color: #3f3f3f;
+}
+
+.in_box .form_name {
+  color: #ff5b22;
+}
+
+.in_box .to_name {
+  color: #4a55df;
+}
+
+.section_input {
+  display: flex;
+  position: absolute;
+  bottom: 50rpx;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 80rpx;
+}
+
+.placeholder {
+  color: #aaa;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+
+.section_input .input_box {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  /* border: 1px solid #000; */
+  height: 65rpx;
+  margin-top: 8rpx;
+  border-radius: 999px;
+  background-color: #f6f6f6;
+}
+
+.section_input input {
+  width: 94%;
+  height: 60rpx;
+  background: #f6f6f6;
+  border-radius: 10rpx;
+}
+
+.section_input .emit_btn {
+  width: 18%;
+  line-height: 55rpx;
+  height: 55rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 999rpx;
+}
+
+.check_box {
+  /* position: absolute;
+  left: 10rpx;
+  bottom: 10rpx; */
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #fff;
+  width: 26%;
+  font-size: 28rpx;
+  margin-left: 2%;
+}
+
+.aon {
+  position: absolute;
+  white-space: nowrap; /* 防止向下换行*/
+}
+
+.doommview {
+  z-index: 3;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+}
+
+/**定义从右边向左边的移动的动画**/
+
+@-webkit-keyframes first {
+  from {
+    transform: translateX(2000rpx);
+    -webkit-transform: translateX(2000rpx);
+  }
+
+  to {
+    transform: translateX(-2000rpx);
+    -webkit-transform: translateX(-2000rpx);
+  }
+}
+
+.authorize {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+  color: #aaa;
+}
+
+/*  重写 checkbox 样式  */
+
+/* 未选中的 背景样式 */
+
+checkbox .wx-checkbox-input {
+  border-radius: 10rpx; /* 圆角 */
+  width: 35rpx; /* 背景的宽 */
+  height: 35rpx; /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background: red;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 35rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 35rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 30rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.none_box{
+  /* display: flex; */
+  
+}
+.none_box .none_img{
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+}
+.none_box .none_text{
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+  color: #ccc;
+}
+/* 回放开始 */
+.back_box {
+  display: flex;
+  justify-content: center;
+  margin: 25rpx 20rpx;
+}
+
+.l_bcak {
+  position: relative;
+  width: 230rpx;
+  font-size: 0;
+}
+
+.l_bcak .t_img {
+  width: 230rpx;
+  height: 130rpx;
+}
+
+.l_bcak .t_time {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.r_bcak {
+  display: inline-block;
+  font-size: 0;
+}
+
+.r_bcak .b_title {
+  display: inline-block;
+  width: 100%;
+  font-size: 28rpx;
+  color: #3f3f3f;
+  margin: 25rpx 0 10rpx 20rpx;
+}
+
+.r_bcak .b_info {
+  font-size: 22rpx;
+  color: #b3b3b3;
+  margin-left: 20rpx;
+}
+
+.see_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx 0 100rpx;
+}
+
+.see_more .down_arrow {
+  width: 40rpx;
+  height: 32rpx;
+}
+
+.see_more .more_text {
+  font-size: 30rpx;
+  color: #bfbfbf;
+}
+/* 回放结束 */
+/* 预告开始 */
+.yg_item {
+  position: relative;
+  width: 100%;
+}
+
+.yg_title {
+  display: inline-block;
+  font-size: 34rpx;
+  color: #3f3f3f;
+  font-weight: bold;
+  margin: 47rpx 0 15rpx 10rpx;
+}
+
+.yg_img {
+  width: 100%;
+}
+
+.yg_info {
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.yg_info .yg_the_host {
+  display: inline-block;
+  margin-right: 60rpx;
+}
+/* 预告结束 */

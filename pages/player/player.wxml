@@ -1,0 +1,180 @@
+<view class="section tc">
+  <!-- rtmp://live.dsj.guocai.com/live/test -->
+  <!-- http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4_550.flv -->
+  <live-player class="live_player" src="{{abstractData.live_video_url}}" mode="live" id="liveT" bindstatechange="statechange" binderror="error" bindnetstatus="netstatus" style="height: 450rpx;" object-fit="fillCrop" poster="{{abstractData.live_pic}}"
+    bindfullscreenchange="fullScreenChange">
+    <cover-view wx:if="{{liveStatus == '3'}}" catchtap="clickPlayer" class="flv_cover_outer">
+      <cover-view class='video_play_box' wx:if="{{!isPlay && isWifi && isPause}}">
+        <cover-image class='live_bg' src='{{abstractData.live_pic}}'></cover-image>
+        <cover-image class='video_play_icon' src='../../images/video_play_icon.png' catchtap='livePlayerStart'></cover-image>
+      </cover-view>
+      <cover-view class='video_play_box' wx:if="{{!isPlay && isWifi && !isPause}}">
+        <cover-image class='video_play_icon' src='../../images/video_play_icon.png' catchtap='livePlayerStart'></cover-image>
+      </cover-view>
+      <cover-view class='loading_box' wx:if="{{isPlay && loadingShow}}">
+        <cover-image class='loading_icon' src='../../images/loading.gif'></cover-image>
+      </cover-view>
+      <cover-view class='notWifi_play_box' wx:if="{{!isWifi}}">
+        <cover-view>您正在使用移动网络</cover-view>
+        <cover-view>继续观看会耗费您的手机流量</cover-view>
+        <cover-view class='go_play' catchtap='goPlayStart'>继续观看</cover-view>
+      </cover-view>
+      <cover-view class="fullscreen_wraper_t" wx:if="{{(!isBotShow&&!isFullScreen)}}">
+        <cover-view class='icon_box'>
+          <cover-image class="icon1" src="../../images/back_icon.png" catchtap="exitFullScreen"></cover-image>
+        </cover-view>
+      </cover-view>
+      <cover-view class="fullscreen_wraper" wx:if="{{!isBotShow}}">
+        <cover-view class='icon_box' wx:if="{{!isPlay}}" catchtap="livePlayerStart">
+          <cover-image class="icon" src="../../images/pause_icon.png"></cover-image>
+        </cover-view>
+        <cover-view class='icon_box' wx:else catchtap="livePlayerPause">
+          <cover-image class="icon" src="../../images/player_icon.png"></cover-image>
+        </cover-view>
+        <cover-view class='icon_box1' wx:if="{{isFullScreen}}" catchtap="requestFullScreen">
+          <cover-image class="icon1" src="../../images/full_screen_open.png"></cover-image>
+        </cover-view>
+        <cover-view wx:else catchtap="exitFullScreen" class='icon_box1'>
+          <cover-image class="icon1" src="../../images/full_screen_close.png"></cover-image>
+        </cover-view>
+      </cover-view>
+      <cover-view wx:for="{{doommData}}" wx:key="{{item.id}}" wx:if="{{(!isFullScreen&&item.display)}}" class="aon" style="animation: first {{item.time > 12 ?item.time : 12}}s linear forwards;top:{{item.top}}%;color:{{item.color}};">
+        {{item.text}}
+      </cover-view>
+      <cover-view class='now_live_box'>
+        <cover-image class='now_live' src='../../images/now_live.png'></cover-image>
+      </cover-view>
+      <!-- </cover-view> -->
+    </cover-view>
+    <!-- 1无预告，2预告中，3直播中，4直播结束，5回放中 -->
+    <cover-view wx:if="{{liveStatus == '1'}}" class='live_bg_box'>
+      <cover-image class='live_bg' src='{{abstractData.live_pic}}'></cover-image>
+      <cover-view class='status_text'>更多直播 敬请关注！</cover-view>
+    </cover-view>
+    <cover-view wx:if="{{liveStatus == '2'}}" class='live_bg_box'>
+      <cover-image class='live_bg' src='{{abstractData.live_pic}}'></cover-image>
+      <cover-view class='status_text'>主播：{{abstractData.an_name}} 直播时间 {{abstractData.live_time}}</cover-view>
+    </cover-view>
+    <cover-view wx:if="{{liveStatus == '4'}}" class='live_bg_box'>
+      <cover-image class='live_bg' src='{{abstractData.live_pic}}'></cover-image>
+      <cover-view class='status_text'>直播已结束</cover-view>
+    </cover-view>
+  </live-player>
+  <view class='tabs'>
+    <view bindtap='tabSwitch' data-index="{{index}}" class='item {{index == tabIndex? "active":""}}' wx:for="{{liveTabList}}" wx:key="{{index}}">{{item.val}}
+      <view wx:if="{{index == tabIndex}}" class='b_line'></view>
+    </view>
+  </view>
+  <!-- 聊天开始 -->
+  <view class='lt_item_box' bindtouchstart="touchStart" bindtouchend="touchEnd" wx:if="{{tabIndex == 0}}">
+    <view class='tips'>
+      <view class='tips_text'>{{liveSystemTips}}</view>
+    </view>
+    <scroll-view class="scroll-view_H" scroll-y="true" style="{{second_height}}" scroll-top="{{scrollTop}}" scroll-with-animation="true" bindscrolltolower="scrollTolower">
+      <view wx:for="{{chatList}}" wx:key="{{index}}" class='item_box'>
+        <image class='avatar' src="{{item.imgUrl}}"></image>
+        <block wx:if="{{item.chatType == 1}}">
+          <view class='in_box'>
+            <text class='nick'>{{item.nickName}}：</text>
+            <text class='text'>{{item.content}}</text>
+          </view>
+        </block>
+        <block wx:if="{{item.chatType == 2}}">
+          <view class='in_box'>
+            <view class='nick'>
+              <text class='form_name'>{{item.from}}</text>
+              <text>对</text>
+              <text class='to_name'>{{item.to}}</text>说：
+              <text class='text'>{{item.content}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <view class="section_input" style='{{inputBtm}}'>
+      <view class='input_box' style="{{inputBtmT==''?'':'width:94%'}}">
+        <button wx:if="{{!isAuthorize}}" class='authorize' open-type="getUserInfo" bindgetuserinfo="getUserInfo">说点什么吧~</button>
+        <input wx:else maxlength="200" disabled="{{isGag}}" placeholder="{{placeholder}}" value='{{inputValue}}' placeholder-class='placeholder' cursor-spacing="10rpx" confirm-type="send" cursor="10" type='text' adjust-position="{{false}}" bindfocus="bindFocus"
+          bindblur="bindBlur" bindconfirm="submitTo" />
+      </view>
+      <checkbox-group bindchange="checkboxChange" wx:if="{{!isGag}}" class="check_box" style='{{inputBtmT}}'>
+        <label class="checkbox">
+          <checkbox value="2" checked="{{item.checked}}" />
+          <text>与主播私聊</text>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <!-- 聊天结束 -->
+  <!-- 简介开始 -->
+  <view class='jj_item_box' catchtouchstart="touchStart" catchtouchend="touchEnd" wx:elif="{{tabIndex == 1}}">
+    <block wx:if="{{abstractData.live_status != 1}}">
+      <component-abstract itemObj="{{abstractData}}"></component-abstract>
+    </block>
+    <block wx:else>
+      <view class='none_box'>
+        <image src='../../images/none.png' class='none_img'></image>
+        <text class='none_text'>暂无相关信息</text>
+      </view>
+    </block>
+  </view>
+  <!-- 简介结束 -->
+  <!-- 回放开始 -->
+  <view class='hf_item_box' bindtouchstart="touchStart" bindtouchend="touchEnd" wx:elif="{{tabIndex == 2}}">
+    <block wx:if="{{abstractData.live_status != 1}}">
+      <!-- <component-back-play backPlayObj="{{backPlayData}}"></component-back-play> -->
+      <view class='back_box' catchtap='playBackItem' wx:for="{{backPlayData}}" wx:key="{{index}}" data-liveid="{{item.live_id}}">
+        <view class='l_bcak'>
+          <image class='t_img' src='{{item.live_pic}}'></image>
+          <text class='t_time'>{{item.v_long}}</text>
+        </view>
+        <view class='r_bcak'>
+          <text class='b_title'>{{item.live_text}}</text>
+          <text class='b_info'>主播：{{item.an_name}}  {{item.live_time}}</text>
+        </view>
+      </view>
+      <view class='see_more' style='{{backSeeMore}}' bindtap='seeMoreFn' data-index="5">
+        <image class='down_arrow' src='../../images/down_arrow.png'></image>
+        <text class='more_text'>查看更多</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='none_box'>
+        <image src='../../images/none.png' class='none_img'></image>
+        <text class='none_text'>暂无相关信息</text>
+      </view>
+    </block>
+  </view>
+  <!-- 回放结束 -->
+  <!-- 预告开始 -->
+  <view class='yg_item_box' bindtouchstart="touchStart" bindtouchend="touchEnd" wx:elif="{{tabIndex == 3}}">
+    <block wx:if="{{abstractData.live_status != 1}}">
+      <!-- <component-trailer trailers="{{trailers}}"></component-trailer> -->
+      <view class='yg_item' wx:for="{{trailers}}" wx:key="{{index}}">
+        <text class='yg_title'>{{item.live_name}}</text>
+        <image class='yg_img' src='{{item.live_pic}}'></image>
+        <view class='yg_info'>
+          <text class='yg_the_host'>主播：{{item.an_name}}</text>
+          <text class='yg_time'>直播时间  {{item.live_time}}</text>
+        </view>
+      </view>
+      <view class='see_more' style='{{trailerSeeMore}}' bindtap='seeMoreFn' data-index="2">
+        <image class='down_arrow' src='../../images/down_arrow.png'></image>
+        <text class='more_text'>查看更多</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='none_box'>
+        <image src='../../images/none.png' class='none_img'></image>
+        <text class='none_text'>暂无相关信息</text>
+      </view>
+    </block>
+  </view>
+  <!-- 预告结束 -->
+  <!-- 下载开始 -->
+  <view class='xz_item_box' catchtouchstart="touchStart" catchtouchend="touchEnd" wx:else>
+    <!-- 跳转联合下载页 -->
+    <web-view src="https://www.mycarter.cn"></web-view>
+  </view>
+  <!-- 下载结束 -->
+</view>

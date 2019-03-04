@@ -1,0 +1,26 @@
+    <view class='live_person_info'>
+      <view class='j_content'>
+        <view class='l_box'>
+          <view>
+            <image class='avatar' src="{{itemObj.an_icon}}"></image>
+            <view class='nick'>{{itemObj.an_name}}</view>
+          </view>
+        </view>
+        <view class='r_box'>
+          <view>
+            <view class='j_title'>{{itemObj.live_name}}</view>
+            <view>
+              <text class='j_time'>直播时间：{{itemObj.live_time}}</text>
+              <text class='j_heat'>热度 {{itemObj.howhot}} </text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='detail_box'>
+      <text class='d_title'>详情:</text>
+      <text class='d_info'>{{itemObj.text1}}</text>
+      <view class='down_box'>
+        <image class='down_erm' src="{{itemObj.qrpic}}"></image>
+      </view>
+    </view>
